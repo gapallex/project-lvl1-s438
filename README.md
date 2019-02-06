@@ -4,3 +4,5 @@
 
 # The BrainGames
 ### hexlet project #1
+
+[![asciicast](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K.svg)](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K)
