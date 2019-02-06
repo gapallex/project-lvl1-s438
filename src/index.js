@@ -13,26 +13,29 @@ const greeting = (rules = '') => {
   }
 };
 
+const question = () => {
+  const randomIntNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const number = randomIntNumber(1, 1000);
+  console.log(`Question: ${number}`);
+
+  const rightAnswer = (number % 2 === 0 ? 'yes' : 'no');
+  const userAnswer = readlineSync.question('Your answer: ');
+
+  if (userAnswer === rightAnswer) {
+    console.log('Correct!');
+    return true;
+  }
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+  return false;
+};
 
 const isEvenGame = (name, round) => {
-  const question = () => {
-    const randomIntNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    const number = randomIntNumber(1, 1000);
-    const rightAnswer = (number % 2 === 0 ? 'yes' : 'no');
-    console.log(`Question: ${number}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === rightAnswer) {
-      console.log('Correct!');
-      return true;
-    }
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-    return false;
-  };
   for (let count = 0; count < round; count += 1) {
     if (question(name) === false) {
       console.log(`Let's try again, ${name}!`);
       break;
-    } else if (count === round - 1) {
+    }
+    if (count === round - 1) {
       console.log(`Congratulations, ${name}!`);
       break;
     }
