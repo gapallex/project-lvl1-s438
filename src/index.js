@@ -23,6 +23,13 @@ export const randomIntNumber = (min, max) => Math.floor(Math.random() * (max - m
 export const isEven = num => num % 2 === 0;
 export const randomOperator = str => str[Math.floor(Math.random() * str.length)];
 
+export const gcd = (a, b) => {
+  if (b === 0) {
+    return a;
+  }
+  return gcd(b, a % b);
+};
+
 export const game = (descriptionGame, gameData) => {
   greeting(descriptionGame);
   console.log('');
