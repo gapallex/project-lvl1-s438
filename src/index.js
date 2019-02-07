@@ -42,8 +42,9 @@ export const game = (description, gameData) => {
 
     if (userAnswer === rightAnswer) {
       console.log(showCorrect);
+    } else {
+      return console.log(showWrong);
     }
-    console.log(showWrong);
   }
   console.log(showCongrats);
 };
