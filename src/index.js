@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
+// import gameData from './games/brain-calc'
 
-const userName = () => {
+const askUserName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return `${name}`;
@@ -13,47 +14,36 @@ const greeting = (rules = '') => {
   }
 };
 
-const question = () => {
-  const randomIntNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  const number = randomIntNumber(1, 1000);
-  console.log(`Question: ${number}`);
-
-  const rightAnswer = (number % 2 === 0 ? 'yes' : 'no');
-  const userAnswer = readlineSync.question('Your answer: ');
-
-  if (userAnswer === rightAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-  return false;
-};
-
-const isEvenGame = (name, round) => {
-  for (let count = 0; count < round; count += 1) {
-    if (question(name) === false) {
-      console.log(`Let's try again, ${name}!`);
-      break;
-    }
-    if (count === round - 1) {
-      console.log(`Congratulations, ${name}!`);
-      break;
-    }
-  }
-};
-
 export const welcome = () => {
   greeting();
   console.log('');
-  userName();
+  askUserName();
 };
 
+export const randomIntNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+export const isEven = num => num % 2 === 0;
+export const randomOperator = str => str[Math.floor(Math.random() * str.length)];
 
-export const evenGame = () => {
-  const rules = 'Answer "yes" if number even otherwise answer "no".';
-  greeting(rules);
+export const game = (description, gameData) => {
+  greeting(description);
   console.log('');
-  const name = userName();
+  const name = askUserName();
   console.log('');
-  isEvenGame(name, 3);
+
+  const round = 3;
+  const showCongrats = `Congratulations, ${name}!`;
+
+  for (let count = 0; count < round; count += 1) {
+    const question = gameData('question');
+    const rightAnswer = gameData();
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+    const showCorrect = 'Correct!';
+    const showWrong = `'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`;
+
+    if (userAnswer === rightAnswer) {
+      console.log(showCorrect);
+    }
+    console.log(showWrong);
+  }
+  console.log(showCongrats);
 };
