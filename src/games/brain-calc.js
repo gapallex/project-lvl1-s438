@@ -1,6 +1,7 @@
 import { game, randomIntNumber, randomOperator } from '..';
 
-const description = 'What is the result of the expression?';
+const descriptionGame = 'What is the result of the expression?';
+
 const calcRightAnswer = (num1, num2, operator) => {
   switch (operator) {
     case '+':
@@ -12,18 +13,21 @@ const calcRightAnswer = (num1, num2, operator) => {
   }
 };
 
-const gameData = (message) => {
+const gameData = () => {
   const num1 = randomIntNumber(1, 10);
   const num2 = randomIntNumber(1, 10);
   const operator = randomOperator('+-*');
   const question = `${num1} ${operator} ${num2}`;
-  const rightAnswer = calcRightAnswer(num1, num2, operator);
-  switch (message) {
-    case 'question':
-      return question;
-    default:
-      return rightAnswer;
-  }
+  const rightAnswer = String(calcRightAnswer(num1, num2, operator));
+
+  return (message) => {
+    switch (message) {
+      case 'question':
+        return question;
+      default:
+        return rightAnswer;
+    }
+  };
 };
 
-export default () => game(description, gameData);
+export default () => game(descriptionGame, gameData);

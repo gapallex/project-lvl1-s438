@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-// import gameData from './games/brain-calc'
 
 const askUserName = () => {
   const name = readlineSync.question('May I have your name? ');
@@ -24,27 +23,27 @@ export const randomIntNumber = (min, max) => Math.floor(Math.random() * (max - m
 export const isEven = num => num % 2 === 0;
 export const randomOperator = str => str[Math.floor(Math.random() * str.length)];
 
-export const game = (description, gameData) => {
-  greeting(description);
+export const game = (descriptionGame, gameData) => {
+  greeting(descriptionGame);
   console.log('');
-  const name = askUserName();
+  const userName = askUserName();
   console.log('');
 
-  const round = 3;
-  const showCongrats = `Congratulations, ${name}!`;
+  const gameRounds = 3;
 
-  for (let count = 0; count < round; count += 1) {
-    const question = gameData('question');
-    const rightAnswer = gameData();
+  for (let count = 0; count < gameRounds; count += 1) {
+    const getGameData = gameData();
+    const question = getGameData('question');
+    const rightAnswer = getGameData();
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    const showCorrect = 'Correct!';
-    const showWrong = `'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`;
+    const acceptAnswer = 'Correct!';
+    const rejectAnswer = `'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`;
 
     if (userAnswer === rightAnswer) {
-      console.log(showCorrect);
+      console.log(acceptAnswer);
     } else {
-      return console.log(showWrong);
+      return console.log(rejectAnswer);
     }
   }
-  console.log(showCongrats);
+  return console.log(`Congratulations, ${userName}!`);
 };

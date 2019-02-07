@@ -1,10 +1,19 @@
 import { game, randomIntNumber, isEven } from '..';
 
-const evenGame = () => {
-  const description = 'Answer "yes" if number even otherwise answer "no".';
-  const question = randomIntNumber();
-  const rightAnswer = isEven ? 'yes' : 'no';
-  game(description, question, rightAnswer);
+const descriptionGame = 'Answer "yes" if number even otherwise answer "no".';
+
+const gameData = () => {
+  const question = randomIntNumber(1, 1000);
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
+
+  return (message) => {
+    switch (message) {
+      case 'question':
+        return question;
+      default:
+        return rightAnswer;
+    }
+  };
 };
 
-export default evenGame;
+export default () => game(descriptionGame, gameData);

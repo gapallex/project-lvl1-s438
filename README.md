@@ -5,4 +5,8 @@
 # The BrainGames
 ### hexlet project #1
 
+## brain-even
 [![asciicast](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K.svg)](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K)
+
+## brain-calc
+[![asciicast](https://asciinema.org/a/PugmCBdKtdsuboLK22M14rG1q.svg)](https://asciinema.org/a/PugmCBdKtdsuboLK22M14rG1q)
