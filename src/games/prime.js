@@ -1,20 +1,21 @@
 import game from '..';
 import randomIntNumber from '../utils';
 
-const gameDescription = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const gcd = (a, b) => {
-  if (b === 0) {
-    return a;
+const isPrime = (num) => {
+  const sqrtNum = Math.sqrt(num);
+  for (let i = 2; i < sqrtNum; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
   }
-  return gcd(b, a % b);
+  return true;
 };
 
 const gameData = () => {
-  const num1 = randomIntNumber(1, 100);
-  const num2 = randomIntNumber(1, 100);
-  const question = `${num1} ${num2}`;
-  const rightAnswer = String(gcd(num1, num2));
+  const question = randomIntNumber(1, 101);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
 
   return (message) => {
     switch (message) {

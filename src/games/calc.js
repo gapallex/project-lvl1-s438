@@ -2,7 +2,7 @@ import game from '..';
 import randomIntNumber from '../utils';
 
 const gameDescription = 'What is the result of the expression?';
-const randomOperator = str => str[Math.floor(Math.random() * str.length)];
+const randomOperator = str => str[randomIntNumber(0, str.length)];
 
 const calcRightAnswer = (num1, num2, operator) => {
   switch (operator) {
@@ -26,8 +26,10 @@ const gameData = () => {
     switch (message) {
       case 'question':
         return question;
-      default:
+      case 'rightAnswer':
         return rightAnswer;
+      default:
+        return 'Error: wrong message';
     }
   };
 };
