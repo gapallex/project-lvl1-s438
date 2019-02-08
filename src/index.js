@@ -1,40 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const askUserName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  return `${name}`;
-};
-
-const greeting = (rules = '') => {
-  console.log('Welcome to the Brain Games!');
-  if (rules !== '') {
-    console.log(`${rules}`);
-  }
-};
-
-export const welcome = () => {
-  greeting();
-  console.log('');
-  askUserName();
-};
-
-export const randomIntNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-export const isEven = num => num % 2 === 0;
-export const randomOperator = str => str[Math.floor(Math.random() * str.length)];
-
-export const gcd = (a, b) => {
-  if (b === 0) {
-    return a;
-  }
-  return gcd(b, a % b);
-};
-
-export const game = (descriptionGame, gameData) => {
-  greeting(descriptionGame);
-  console.log('');
-  const userName = askUserName();
-  console.log('');
+export default (gameDescription, gameData) => {
+  console.log(`Welcome to the Brain Games!\n${gameDescription}\n`);
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
 
   const gameRounds = 3;
 

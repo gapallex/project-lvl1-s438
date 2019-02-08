@@ -1,6 +1,8 @@
-import { game, randomIntNumber, randomOperator } from '..';
+import game from '..';
+import randomIntNumber from '../utils';
 
-const descriptionGame = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
+const randomOperator = str => str[Math.floor(Math.random() * str.length)];
 
 const calcRightAnswer = (num1, num2, operator) => {
   switch (operator) {
@@ -30,4 +32,4 @@ const gameData = () => {
   };
 };
 
-export default () => game(descriptionGame, gameData);
+export default () => game(gameDescription, gameData);

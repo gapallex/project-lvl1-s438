@@ -1,6 +1,14 @@
-import { game, randomIntNumber, gcd } from '..';
+import game from '..';
+import randomIntNumber from '../utils';
 
-const descriptionGame = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
+
+const gcd = (a, b) => {
+  if (b === 0) {
+    return a;
+  }
+  return gcd(b, a % b);
+};
 
 const calcRightAnswer = (num1, num2) => {
   if (num1 > num2) {
@@ -25,4 +33,4 @@ const gameData = () => {
   };
 };
 
-export default () => game(descriptionGame, gameData);
+export default () => game(gameDescription, gameData);
