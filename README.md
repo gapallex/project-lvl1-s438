@@ -3,7 +3,10 @@
 [![Build Status](https://travis-ci.com/gapallex/project-lvl1-s438.svg?branch=master)](https://travis-ci.com/gapallex/project-lvl1-s438)
 
 # The BrainGames
-### hexlet project #1
+*hexlet project #1*
+
+## How to install
+    npm install brain-games-gapallex
 
 ## brain-even
 [![asciicast](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K.svg)](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K)

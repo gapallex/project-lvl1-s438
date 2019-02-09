@@ -2,7 +2,7 @@ import game from '..';
 import randomIntNumber from '../utils';
 
 const gameDescription = 'What is the result of the expression?';
-const randomOperator = str => str[randomIntNumber(0, str.length)];
+const randomOperator = str => str[randomIntNumber(0, str.length - 1)];
 
 const calcRightAnswer = (num1, num2, operator) => {
   switch (operator) {
@@ -10,8 +10,10 @@ const calcRightAnswer = (num1, num2, operator) => {
       return num1 + num2;
     case '-':
       return num1 - num2;
-    default:
+    case '*':
       return num1 * num2;
+    default:
+      return 'Error: wrong message';
   }
 };
 

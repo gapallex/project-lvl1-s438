@@ -4,13 +4,14 @@ import randomIntNumber from '../utils';
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  const sqrtNum = Math.sqrt(num);
-  for (let i = 2; i < sqrtNum; i += 1) {
+  for (let i = 2; ; i += 1) {
+    if (num < i ** 2) {
+      return true;
+    }
     if (num % i === 0) {
       return false;
     }
   }
-  return true;
 };
 
 const gameData = () => {

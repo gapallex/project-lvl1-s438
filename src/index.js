@@ -18,8 +18,9 @@ export default (gameDescription, gameData) => {
     if (userAnswer === rightAnswer) {
       console.log(acceptAnswer);
     } else {
-      return console.log(rejectAnswer);
+      console.log(rejectAnswer);
+      return;
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
