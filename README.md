@@ -7,18 +7,10 @@
 
 ## How to install
     npm install brain-games-gapallex
-
-## brain-even
-[![asciicast](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K.svg)](https://asciinema.org/a/0zX7VhX5vDL17RSLsva6z1V6K)
-
-## brain-calc
-[![asciicast](https://asciinema.org/a/PugmCBdKtdsuboLK22M14rG1q.svg)](https://asciinema.org/a/PugmCBdKtdsuboLK22M14rG1q)
-
-## brain-gcd
-[![asciicast](https://asciinema.org/a/kVNEAwEhFvbxcD6JewiZJQNDD.svg)](https://asciinema.org/a/kVNEAwEhFvbxcD6JewiZJQNDD)
-
-## brain-progression
-[![asciicast](https://asciinema.org/a/thkFdFirMifdldxgBIeBAcIFl.svg)](https://asciinema.org/a/thkFdFirMifdldxgBIeBAcIFl)
-
-## braim-prime
-[![asciicast](https://asciinema.org/a/MEBb9OE8gOpzpHPmsXbMv8sgt.svg)](https://asciinema.org/a/MEBb9OE8gOpzpHPmsXbMv8sgt)
+    
+## Games
+    brain-even
+    brain-calc
+    brain-gcd
+    brain-progression
+    brain-prime
